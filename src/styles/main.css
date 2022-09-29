@@ -4,9 +4,10 @@
 
 
 :root {
-  --color-primary: #ec4755;
-  --color-secondary: #a12c34;
+  --color-primary: rgb(17, 87, 17);
+  --color-secondary: rgb(17, 87, 17);
   --color-tertiaty: #99a0a3;
+  --background-color-primary: blue;
 }
 
 a { 
@@ -25,4 +26,11 @@ a:hover {
 
 .content ul {
   @apply my-6;
+}
+
+.text-primary {
+  color: rgb(17, 87, 17);
+}
+
+.featureImg {
 }

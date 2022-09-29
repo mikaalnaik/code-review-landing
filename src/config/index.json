@@ -27,8 +27,8 @@
     "href": "#"
   },
   "mainHero": {
-    "title": "Use me as your",
-    "subtitle": "landing page.",
+    "title": "Make up to $60K",
+    "subtitle": "with HomeHero.",
     "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
     "img": "/assets/images/happyTeam.jpeg",
     "primaryAction": {
@@ -41,7 +41,7 @@
     }
   },
   "product": {
-    "title": "React landing page 2021",
+    "title": "Why Join HomeHero",
     "items": [
       {
         "title": "A plug n play template",

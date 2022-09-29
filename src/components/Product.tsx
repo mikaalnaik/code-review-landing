@@ -1,11 +1,24 @@
 import React from 'react';
 
-import config from '../config/index.json';
 import Divider from './Divider';
 
 const Product = () => {
-  const { product } = config;
-  const [firstItem, secondItem] = product.items;
+  // const [_, secondItem] = product.items;
+
+  const firstItem = {
+    title: 'Get Instant Access To Clients',
+    description:
+      'Our growing roster of clients means that you can focus on your work instead of cold-calling and prospecting.',
+  };
+  const secondItem = {
+    title: 'Industry Leading Customer Support',
+    description:
+      "We help keep your clients happy and help resolve issues when they aren't. Simplify your billing, scheduling, and crew management",
+  };
+
+  const product = {
+    title: 'Why Join HomeHero?',
+  };
 
   return (
     <section className={`bg-background py-8`} id="product">
@@ -23,32 +36,34 @@ const Product = () => {
           ))}
         </h1>
         <Divider />
-        <div className={`flex flex-wrap`}>
-          <div className={`w-5/6 sm:w-1/2 p-6 mt-20`}>
-            <h3
-              className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
-            >
-              {firstItem?.title}
-            </h3>
-            <p className={`text-gray-600`}>{firstItem?.description}</p>
+        <div className={`flex flex-wrap flex-col-reverse sm:flex-row`}>
+          <div className={`w-full text-center sm:w-1/2 p-6 mt-20`}>
+            <div className={`align-middle`}>
+              <h3
+                className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
+              >
+                {firstItem?.title}
+              </h3>
+              <p className={`text-gray-600 mb-8`}>{firstItem?.description}</p>
+            </div>
           </div>
           <div className={`w-full sm:w-1/2 p-6`}>
             <img
-              className="h-6/6"
-              src={firstItem?.img}
+              className="featureImg w-100"
+              src={'/assets/images/home-run.png'}
               alt={firstItem?.title}
             />
           </div>
         </div>
-        <div className={`flex flex-wrap flex-col-reverse sm:flex-row`}>
+        <div className={`flex flex-wrap flex-col sm:flex-row`}>
           <div className={`w-full sm:w-1/2 p-6`}>
             <img
-              className="h-6/6"
-              src={secondItem?.img}
+              className="featureImg w-100"
+              src={'/assets/images/communication.png'}
               alt={secondItem?.title}
             />
           </div>
-          <div className={`w-full sm:w-1/2 p-6 mt-20`}>
+          <div className={`w-full text-center sm:w-1/2 p-6 mt-20`}>
             <div className={`align-middle`}>
               <h3
                 className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
@@ -57,6 +72,29 @@ const Product = () => {
               </h3>
               <p className={`text-gray-600 mb-8`}>{secondItem?.description}</p>
             </div>
+          </div>
+        </div>
+
+        <div className={`flex flex-wrap flex-col-reverse sm:flex-row`}>
+          <div className={`w-full text-center sm:w-1/2 p-6 mt-20`}>
+            <div className={`align-middle`}>
+              <h3
+                className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
+              >
+                Route Optimization
+              </h3>
+              <p className={`text-gray-600 mb-8`}>
+                Our optimized routes help you get to more sites faster, with
+                less crew downtime.
+              </p>
+            </div>
+          </div>
+          <div className={`w-full sm:w-1/2 p-6`}>
+            <img
+              className="featureImg w-100"
+              src={'/assets/images/map.png'}
+              alt={firstItem?.title}
+            />
           </div>
         </div>
       </div>
