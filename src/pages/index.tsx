@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { GetServerSidePropsContext } from 'next';
+
 import About from '../components/About';
 import Analytics from '../components/Analytics';
 import Header from '../components/Header';
@@ -9,8 +11,14 @@ import MainHeroImage from '../components/MainHeroImage';
 import Product from '../components/Product';
 import SecondHero from '../components/SecondHero';
 
-export async function getServerSideProps() {
-  const isVariant = Math.random() < 0.5;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  let isVariant = false;
+  const { v } = context.query;
+  if (v === '1') {
+    isVariant = true;
+  } else {
+    isVariant = Math.random() < 0.5;
+  }
   return {
     props: {
       isVariant,
