@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-title-in-document-head */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { AppConfig } from '../utils/AppConfig';
@@ -7,7 +8,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang={AppConfig.locale}>
-        <Head />
+        <Head>
+          <title>HomeHero</title>
+        </Head>
         <body>
           <Main />
           <NextScript />
