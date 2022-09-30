@@ -11,12 +11,12 @@ interface Props {
 const CustomerHero = ({ isVariant }: Props) => {
   const title = isVariant
     ? 'Affordable home maintenince'
-    : '1-stop home maintenince';
+    : 'High Quality home maintenince, guaranteed';
   const subtitle = isVariant ? 'with HomeHero' : 'with HomeHero.';
 
   const mainBody = isVariant
-    ? 'Get high quality service, guaranteed with a HomeHero crew. '
-    : "It's never been easier to build your own home maintenance business. Let HomeHero take care of your clients, payroll and scheduling.";
+    ? 'Get high quality service, guaranteed with a HomeHero crew. Get an instant quote in 2 minutes'
+    : "Use HomeHero's 1-stop home maintenince service for the highest quality work, simply.";
 
   const router = useRouter();
 
@@ -40,7 +40,7 @@ const CustomerHero = ({ isVariant }: Props) => {
               onClick={redirect}
               className={`w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-background bg-primary hover:bg-border hover:text-primary md:py-4 md:text-lg md:px-10`}
             >
-              howy
+              Get a Quote
             </a>
           </div>
         </div>

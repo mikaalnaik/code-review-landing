@@ -14,6 +14,7 @@ import SecondHero from '../../components/SecondHero';
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   let isVariant = false;
   const { v } = context.query;
+
   if (v) {
     if (v === '1') {
       isVariant = true;
@@ -50,9 +51,22 @@ const App = ({ isVariant }: Props) => {
         <Product
           sectionTitle="Why Use HomeHero"
           itemOne={{
-            title: 'howdyu',
-            description: 'folks',
-            img: '/assets/images/home-run.png',
+            title: 'High Quality Maintenaince',
+            description:
+              'Stop managing multiple providers. Our Pros deliver the highest quality service.',
+            img: '/assets/images/home-app.png',
+          }}
+          itemTwo={{
+            title: 'Affordable, instant quotes',
+            description:
+              "We believe that everyone should have the support to take care of their home. HomeHero's affordable service can help you get started in less than 5 minutes",
+            img: '/assets/images/flowers.png',
+          }}
+          itemThree={{
+            title: 'Amazing customer support',
+            description:
+              'Our industry leading customer support make sure you stay happy with your service.',
+            img: '/assets/images/chat.png',
           }}
         />
       </LazyShow>

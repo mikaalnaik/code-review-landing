@@ -14,6 +14,7 @@ import SecondHero from '../components/SecondHero';
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   let isVariant = false;
   const { v } = context.query;
+  console.log('vbvv', v);
   if (v) {
     if (v === '1') {
       isVariant = true;

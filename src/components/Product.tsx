@@ -10,11 +10,13 @@ interface Props {
   };
   itemTwo?: {
     title: string;
+    img: string;
     description: string;
   };
   itemThree?: {
     title: string;
     description: string;
+    img: string;
   };
   sectionTitle?: string;
 }
@@ -31,6 +33,7 @@ const Product = ({ itemOne, itemTwo, itemThree, sectionTitle }: Props) => {
   };
   const secondItem = {
     title: itemTwo?.title || 'Industry Leading Customer Support',
+    img: itemTwo?.img || '/assets/images/communication.png',
     description:
       itemTwo?.description ||
       "We help keep your clients happy and help resolve issues when they aren't. Simplify your billing, scheduling, and crew management",
@@ -38,6 +41,7 @@ const Product = ({ itemOne, itemTwo, itemThree, sectionTitle }: Props) => {
 
   const thirdItem = {
     title: itemThree?.title || 'Route Optimization',
+    img: itemThree?.img || '/assets/images/map.png',
     description:
       itemThree?.description ||
       'Our optimized routes help you get to more sites faster, with less crew downtime.',
@@ -86,7 +90,7 @@ const Product = ({ itemOne, itemTwo, itemThree, sectionTitle }: Props) => {
           <div className={`w-full sm:w-1/2 p-6`}>
             <img
               className="featureImg w-100"
-              src={'/assets/images/communication.png'}
+              src={secondItem.img}
               alt={secondItem?.title}
             />
           </div>
@@ -116,7 +120,7 @@ const Product = ({ itemOne, itemTwo, itemThree, sectionTitle }: Props) => {
           <div className={`w-full sm:w-1/2 p-6`}>
             <img
               className="featureImg w-100"
-              src={'/assets/images/map.png'}
+              src={thirdItem.img}
               alt={firstItem?.title}
             />
           </div>

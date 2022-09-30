@@ -53,7 +53,7 @@ const Menu = ({ isVariant, isCustomerPage }: Props) => {
                       }}
                       className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"
                     >
-                      Join Us
+                      {isCustomerPage ? 'Get A Quote' : 'Join Us'}
                     </button>
                     {/* <MenuIcon className="h-6 w-6" aria-hidden="true" /> */}
                   </button>

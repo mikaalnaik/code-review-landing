@@ -13,5 +13,9 @@ export const redirectToForm = (
     category: 'general',
     label: type,
   });
-  router.push('https://tally.so/r/w7RAy0');
+  if (type === 'customer') {
+    router.push('https://tally.so/r/3xXAYJ');
+  } else {
+    router.push('https://tally.so/r/w7RAy0');
+  }
 };
