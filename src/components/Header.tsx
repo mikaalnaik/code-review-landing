@@ -10,9 +10,10 @@ import { redirectToForm } from '../lib/redirectToForm';
 
 interface Props {
   isVariant: boolean;
+  isCustomerPage?: boolean;
 }
 
-const Menu = ({ isVariant }: Props) => {
+const Menu = ({ isVariant, isCustomerPage }: Props) => {
   const router = useRouter();
   const { navigation, company, callToAction } = config;
   const { logo } = company;
@@ -43,7 +44,13 @@ const Menu = ({ isVariant }: Props) => {
                     className={`bg-background rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary`}
                   >
                     <button
-                      onClick={() => redirectToForm(router, isVariant)}
+                      onClick={() => {
+                        redirectToForm(
+                          router,
+                          isVariant,
+                          isCustomerPage ? 'customer' : 'contractor'
+                        );
+                      }}
                       className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"
                     >
                       Join Us
@@ -68,7 +75,13 @@ const Menu = ({ isVariant }: Props) => {
                 </Link>
               ))} */}
               <button
-                onClick={() => redirectToForm(router, isVariant)}
+                onClick={() => {
+                  redirectToForm(
+                    router,
+                    isVariant,
+                    isCustomerPage ? 'customer' : 'contractor'
+                  );
+                }}
                 className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"
               >
                 Join Us

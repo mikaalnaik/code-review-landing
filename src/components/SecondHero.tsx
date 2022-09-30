@@ -7,15 +7,20 @@ import { redirectToForm } from '../lib/redirectToForm';
 
 interface Props {
   isVariant: boolean;
+  isCustomerPage: boolean;
 }
 
-const SecondHero = ({ isVariant }: Props) => {
+const SecondHero = ({ isVariant, isCustomerPage }: Props) => {
   const { mainHero } = config;
 
   const router = useRouter();
 
   const redirect = () => {
-    redirectToForm(router, isVariant);
+    redirectToForm(
+      router,
+      isVariant,
+      isCustomerPage ? 'customer' : 'contractor'
+    );
   };
 
   return (

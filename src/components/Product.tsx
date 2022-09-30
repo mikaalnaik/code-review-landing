@@ -6,6 +6,7 @@ interface Props {
   itemOne?: {
     title: string;
     description: string;
+    img: string;
   };
   itemTwo?: {
     title: string;
@@ -15,13 +16,15 @@ interface Props {
     title: string;
     description: string;
   };
+  sectionTitle?: string;
 }
 
-const Product = ({ itemOne, itemTwo, itemThree }: Props) => {
+const Product = ({ itemOne, itemTwo, itemThree, sectionTitle }: Props) => {
   // const [_, secondItem] = product.items;
 
   const firstItem = {
     title: itemOne?.title || 'Get Instant Access To Clients',
+    img: itemOne?.img || '/assets/images/home-run.png',
     description:
       itemOne?.description ||
       'Our growing roster of clients means that you can focus on your work instead of cold-calling and prospecting.',
@@ -41,7 +44,7 @@ const Product = ({ itemOne, itemTwo, itemThree }: Props) => {
   };
 
   const product = {
-    title: 'Why Join HomeHero?',
+    title: sectionTitle || 'Why Join HomeHero?',
   };
 
   return (
@@ -74,7 +77,7 @@ const Product = ({ itemOne, itemTwo, itemThree }: Props) => {
           <div className={`w-full sm:w-1/2 p-6`}>
             <img
               className="featureImg w-100"
-              src={'/assets/images/home-run.png'}
+              src={firstItem.img}
               alt={firstItem?.title}
             />
           </div>

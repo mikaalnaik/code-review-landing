@@ -52,7 +52,7 @@ const App = ({ isVariant }: Props) => {
       <LazyShow>
         <div className={`relative bg-background`}>
           <div className="max-w-7xl mx-auto">
-            <SecondHero isVariant={isVariant} />
+            <SecondHero isVariant={isVariant} isCustomerPage={false} />
           </div>
           {/* <MainHeroImage /> */}
         </div>

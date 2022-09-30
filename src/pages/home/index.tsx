@@ -40,7 +40,7 @@ const App = ({ isVariant }: Props) => {
           <div
             className={`relative z-10 pb-8 bg-background sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32`}
           >
-            <Header isVariant={isVariant} />
+            <Header isVariant={isVariant} isCustomerPage={true} />
             <CustomerHero isVariant={isVariant} />
           </div>
         </div>
@@ -48,16 +48,18 @@ const App = ({ isVariant }: Props) => {
       </div>
       <LazyShow>
         <Product
+          sectionTitle="Why Use HomeHero"
           itemOne={{
             title: 'howdyu',
             description: 'folks',
+            img: '/assets/images/home-run.png',
           }}
         />
       </LazyShow>
       <LazyShow>
         <div className={`relative bg-background`}>
           <div className="max-w-7xl mx-auto">
-            <SecondHero isVariant={isVariant} />
+            <SecondHero isVariant={isVariant} isCustomerPage={true} />
           </div>
           {/* <MainHeroImage /> */}
         </div>

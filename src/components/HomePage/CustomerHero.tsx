@@ -15,13 +15,13 @@ const CustomerHero = ({ isVariant }: Props) => {
   const subtitle = isVariant ? 'with HomeHero' : 'with HomeHero.';
 
   const mainBody = isVariant
-    ? 'Instantly grow your client list and take customer support and payroll off your plate.'
+    ? 'Get high quality service, guaranteed with a HomeHero crew. '
     : "It's never been easier to build your own home maintenance business. Let HomeHero take care of your clients, payroll and scheduling.";
 
   const router = useRouter();
 
   const redirect = () => {
-    redirectToForm(router, isVariant);
+    redirectToForm(router, isVariant, 'customer');
   };
 
   return (

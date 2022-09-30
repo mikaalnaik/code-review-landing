@@ -24,7 +24,7 @@ const MainHero = ({ isVariant }: Props) => {
   const router = useRouter();
 
   const redirect = () => {
-    redirectToForm(router, isVariant);
+    redirectToForm(router, isVariant, 'contractor');
   };
 
   return (
