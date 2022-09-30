@@ -2,18 +2,42 @@ import React from 'react';
 
 import Divider from './Divider';
 
-const Product = () => {
+interface Props {
+  itemOne?: {
+    title: string;
+    description: string;
+  };
+  itemTwo?: {
+    title: string;
+    description: string;
+  };
+  itemThree?: {
+    title: string;
+    description: string;
+  };
+}
+
+const Product = ({ itemOne, itemTwo, itemThree }: Props) => {
   // const [_, secondItem] = product.items;
 
   const firstItem = {
-    title: 'Get Instant Access To Clients',
+    title: itemOne?.title || 'Get Instant Access To Clients',
     description:
+      itemOne?.description ||
       'Our growing roster of clients means that you can focus on your work instead of cold-calling and prospecting.',
   };
   const secondItem = {
-    title: 'Industry Leading Customer Support',
+    title: itemTwo?.title || 'Industry Leading Customer Support',
     description:
+      itemTwo?.description ||
       "We help keep your clients happy and help resolve issues when they aren't. Simplify your billing, scheduling, and crew management",
+  };
+
+  const thirdItem = {
+    title: itemThree?.title || 'Route Optimization',
+    description:
+      itemThree?.description ||
+      'Our optimized routes help you get to more sites faster, with less crew downtime.',
   };
 
   const product = {
@@ -81,12 +105,9 @@ const Product = () => {
               <h3
                 className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
               >
-                Route Optimization
+                {thirdItem.title}
               </h3>
-              <p className={`text-gray-600 mb-8`}>
-                Our optimized routes help you get to more sites faster, with
-                less crew downtime.
-              </p>
+              <p className={`text-gray-600 mb-8`}>{thirdItem.description}</p>
             </div>
           </div>
           <div className={`w-full sm:w-1/2 p-6`}>

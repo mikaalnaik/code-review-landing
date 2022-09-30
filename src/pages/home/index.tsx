@@ -2,14 +2,14 @@ import React from 'react';
 
 import { GetServerSidePropsContext } from 'next';
 
-import About from '../components/About';
-import Analytics from '../components/Analytics';
-import Header from '../components/Header';
-import LazyShow from '../components/LazyShow';
-import MainHero from '../components/MainHero';
-import MainHeroImage from '../components/MainHeroImage';
-import Product from '../components/Product';
-import SecondHero from '../components/SecondHero';
+import About from '../../components/About';
+import Analytics from '../../components/Analytics';
+import Header from '../../components/Header';
+import CustomerHero from '../../components/HomePage/CustomerHero';
+import LazyShow from '../../components/LazyShow';
+import MainHeroImage from '../../components/MainHeroImage';
+import Product from '../../components/Product';
+import SecondHero from '../../components/SecondHero';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   let isVariant = false;
@@ -41,13 +41,18 @@ const App = ({ isVariant }: Props) => {
             className={`relative z-10 pb-8 bg-background sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32`}
           >
             <Header isVariant={isVariant} />
-            <MainHero isVariant={isVariant} />
+            <CustomerHero isVariant={isVariant} />
           </div>
         </div>
-        <MainHeroImage />
+        <MainHeroImage img={'/assets/images/house.jpeg'} />
       </div>
       <LazyShow>
-        <Product />
+        <Product
+          itemOne={{
+            title: 'howdyu',
+            description: 'folks',
+          }}
+        />
       </LazyShow>
       <LazyShow>
         <div className={`relative bg-background`}>
